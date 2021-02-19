@@ -30,7 +30,7 @@ class database():
 			else:
 				index = index + 1
 
+		# Statement execution
 		statement = "INSERT INTO {}({}) VALUES ({})".format(table, collist, vallist)
-
 		self.cursor.execute(statement, values)
 		self.con.commit()
