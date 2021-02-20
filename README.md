@@ -1,2 +1,2 @@
-# Multiplayer-RPG-Engine-Client
-A client for Entangled's multiplayer text-based RPG engine.
+# Multiplayer-RPG-Engine-Server
+The server for Entangled's multiplayer text-based RPG engine.
