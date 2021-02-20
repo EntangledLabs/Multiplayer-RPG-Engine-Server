@@ -1,13 +1,6 @@
-import sqlite3
+import database.database as db
 
-def logintable():
-    pass
+def check_for(name):
+	pass
 
-def ingametable():
-    pass
-
-def itemstable():
-    pass
-
-def maptable():
-    pass
+def 

@@ -4,6 +4,7 @@ class database():
 
 	def __init__(self, file):
 		self.file = file
+		self.open()
 
 	def open(self):
 		self.con = sqlite3.connect(self.file)
@@ -34,3 +35,22 @@ class database():
 		statement = "INSERT INTO {}({}) VALUES ({})".format(table, collist, vallist)
 		self.cursor.execute(statement, values)
 		self.con.commit()
+
+	def make_tbl(self, name, colmap, **kwargs):
+		collist = str
+		index = 0
+		for column,valtype in colmap:
+			collist = collist + "{} {}".format(column, valtype)
+			for col,constraint in kwargs:
+				if (column == col):
+					collist = collist + constraint
+			if (index != len(colmap)-1):
+				collist = collist + ", "
+			else:
+				index = index + 1
+
+		statement = "CREATE TABLE {}({})".format(name, collist)
+		self.cursor.execute(statement)
+		self.con.commit()
+
+	def retrieve
